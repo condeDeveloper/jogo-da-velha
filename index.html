@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Jogo da Velha</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Jogo da Velha</h1>
+
+    <nav class="modes" id="modes">
+      <button data-mode="easy">Fácil</button>
+      <button data-mode="medium" class="active">Médio</button>
+      <button data-mode="impossible">Impossível</button>
+      <button data-mode="2p">2 Jogadores</button>
+    </nav>
+
+    <section class="score">
+      <div class="you"><span id="name-x">Você (X)</span><strong id="score-x">0</strong></div>
+      <div class="draw"><span>Empates</span><strong id="score-d">0</strong></div>
+      <div class="cpu"><span id="name-o">CPU (O)</span><strong id="score-o">0</strong></div>
+    </section>
+
+    <p class="status" id="status">Sua vez</p>
+
+    <section class="board" id="board">
+      <button class="cell" data-i="0"></button><button class="cell" data-i="1"></button><button class="cell" data-i="2"></button>
+      <button class="cell" data-i="3"></button><button class="cell" data-i="4"></button><button class="cell" data-i="5"></button>
+      <button class="cell" data-i="6"></button><button class="cell" data-i="7"></button><button class="cell" data-i="8"></button>
+      <svg class="line" id="line" viewBox="0 0 300 300"><path id="line-path" d="" /></svg>
+    </section>
+
+    <div class="actions">
+      <button id="new">Nova rodada</button>
+      <button id="reset" class="ghost">Zerar placar</button>
+    </div>
+    <p class="hint">Quem começa alterna a cada rodada. Tecla <kbd>N</kbd> começa uma nova.</p>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
